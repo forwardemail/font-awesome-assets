@@ -122,7 +122,7 @@ export function img(name, color, width, height, attrs) {
   $img.attr('height', height);
   $img.attr('src', `data:image/svg+xml;base64,${new Buffer(str, 'binary').toString('base64')}`);
   $img = applyAttributes($img, attrs);
-  return $img.html();
+  return $.html($img);
 }
 
 export function png(name, color, width, height, attrs, size) {
