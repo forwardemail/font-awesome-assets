@@ -61,14 +61,12 @@ export function svg(name, color, width, height) {
   // set defaults
   name = name || 'smile-o';
   color = color || '#000';
-  width = width || '100%';
-  height = height || '100%';
+  width = (width || '100%').toString();
+  height = (height || '100%').toString();
 
   // check variable types
   if (!_.isString(name)) throw new Error('fa.svg `name` must be a String');
   if (!_.isString(color)) throw new Error('fa.svg `color` must be a String');
-  if (!_.isString(width)) throw new Error('fa.svg `width` must be a String');
-  if (!_.isString(height)) throw new Error('fa.svg `height` must be a String');
 
   // convert name to lowercase
   name = name.toLowerCase();

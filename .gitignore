@@ -9,6 +9,3 @@ logs
 npm-debug.log*
 *.idea
 lib
-
-# generated html files
-*.html

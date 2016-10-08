@@ -1,7 +1,7 @@
 {
   "name": "font-awesome-assets",
   "description": "Convert any of @FortAwesome's Font-Awesome icons to an asset, such as an <svg> tag or a Base64-encoded PNG/SVG <img> tag!  This package was built for @CrocodileJS.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/crocodilejs/font-awesome-assets/issues",
   "dependencies": {
