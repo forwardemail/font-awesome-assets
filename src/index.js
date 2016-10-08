@@ -1,8 +1,23 @@
 
+import $ from 'cheerio';
 import svg2png from 'svg2png';
 import _ from 'lodash';
 import svgfont2js from 'svgfont2js';
 import fs from 'fs';
+
+function applyAttributes($el, attrs) {
+  // [ [ attr, val ], ... ]
+  if (!_.isArray(attrs) || attrs.length === 0)
+    return $el;
+  const hasMissing = _.some(attrs, pair => {
+    return !_.isArray(pair) || pair.length !== 2;
+  });
+  if (hasMissing) throw new Error('attribute pairs must be arrays with two keys [ attr, val ]');
+  _.each(attrs, pair => {
+    $el.attr(pair[0], pair[1]);
+  });
+  return $el;
+}
 
 // inspired by <https://github.com/riobard/font-awesome-svg/blob/master/extract.js>
 
@@ -56,7 +71,7 @@ export const iconsByUnicodeHex = _.zipObject(
   icons
 );
 
-export function svg(name, color, width, height) {
+export function svg(name, color, width, height, attrs) {
 
   // set defaults
   name = name || 'smile-o';
@@ -87,35 +102,54 @@ export function svg(name, color, width, height) {
     throw new Error(`fa.svg name "${name}" was missing its font SVG value parsed`);
 
   // return the svg
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${icon.width} ${icon.height}"><path fill="${color}" d="${icon.path}" /></svg>`;
+  let $svg = $('<svg>', {
+    xmlMode: true
+  });
+  $svg.attr('xmlns', 'http://www.w3.org/2000/svg');
+  $svg.attr('width', width);
+  $svg.attr('height', height);
+  $svg.attr('viewBox', `0 0 ${icon.width} ${icon.height}`);
+  $svg = applyAttributes($svg, attrs);
+  $svg.append(`<path fill="${color}" d="${icon.path}" />`);
+  return $.html($svg);
 
 }
 
-export function img(name, color, width, height) {
+export function img(name, color, width, height, attrs) {
   const str = svg(name, color);
-  // eslint-disable-next-line max-len
-  return `<img width="${width}" height="${height}" src="data:image/svg+xml;base64,${new Buffer(str, 'binary').toString('base64')}" />`;
+  let $img = $('<img>');
+  $img.attr('width', width);
+  $img.attr('height', height);
+  $img.attr('src', `data:image/svg+xml;base64,${new Buffer(str, 'binary').toString('base64')}`);
+  $img = applyAttributes($img, attrs);
+  return $img.html();
 }
 
-export function png(name, color, width, height, size) {
+export function png(name, color, width, height, attrs, size) {
   let str = svg(name, color);
   width = parseInt(width, 10) || 16;
   height = parseInt(height, 10) || 16;
   size = parseInt(size, 10) || 1;
   if (!_.isNumber(width)) throw new Error('fa.png width must be a number');
   if (!_.isNumber(height)) throw new Error('fa.png height must be a number');
-  // eslint-disable-next-line max-len
-  str = svg2png.sync(new Buffer(str, 'utf8'), { width: parseInt(width * size, 10), height: parseInt(height * size, 10) });
-  // eslint-disable-next-line max-len
-  return `<img width="${width}" height="${height}" src="data:image/png;base64,${str.toString('base64')}" />`;
+  str = svg2png.sync(new Buffer(str, 'utf8'), {
+    width: parseInt(width * size, 10),
+    height: parseInt(height * size, 10)
+  });
+  let $img = $('<img>');
+  $img.attr('width', width);
+  $img.attr('height', height);
+  $img.attr('src', `data:image/png;base64,${str.toString('base64')}`);
+  $img = applyAttributes($img, attrs);
+  return $.html($img);
 }
 
-export function png2x(name, color, width, height) {
-  return png(name, color, width, height, 2);
+export function png2x(name, color, width, height, attrs) {
+  return png(name, color, width, height, attrs, 2);
 }
 
-export function png3x(name, color, width, height) {
-  return png(name, color, width, height, 3);
+export function png3x(name, color, width, height, attrs) {
+  return png(name, color, width, height, attrs, 3);
 }
 
 export default {

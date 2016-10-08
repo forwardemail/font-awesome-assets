@@ -2,7 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 
-import { svg } from './';
+import { svg, png } from './';
+// import { svg, png3x } from './';
 
 const media = path.join(__dirname, '..', 'media');
 
@@ -23,6 +24,13 @@ fs.writeFileSync(
   svg('hacker-news', 'rgba(0,0,0,0.5)'),
   'utf8'
 );
+
+const briefcase = png('briefcase', '#000', null, null, [
+  [ 'class', 'foo bar baz' ],
+  [ 'style', 'display:inline-block;' ]
+]);
+
+console.log('briefcase', briefcase);
 
 const imgs = [
   // eslint-disable-next-line max-len
