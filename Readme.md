@@ -78,7 +78,7 @@ Output the [fa-briefcase][fa-briefcase] with a black hex color `#000` and 3x ret
 ```js
 import { png3x } from 'font-awesome-assets';
 
-const briefcase = png3x('briefcase', 'rgba(0,0,0,0.5)');
+const briefcase = png3x('briefcase', '#000');
 
 console.log(briefcase);
 
