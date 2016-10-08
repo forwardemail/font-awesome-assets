@@ -97,15 +97,25 @@ export function img(name, color, width, height) {
   return `<img width="${width}" height="${height}" src="data:image/svg+xml;base64,${new Buffer(str, 'binary').toString('base64')}" />`;
 }
 
-export function png(name, color, width, height) {
+export function png(name, color, width, height, size) {
   let str = svg(name, color);
   width = parseInt(width, 10) || 16;
   height = parseInt(height, 10) || 16;
+  size = parseInt(size, 10) || 1;
   if (!_.isNumber(width)) throw new Error('fa.png width must be a number');
   if (!_.isNumber(height)) throw new Error('fa.png height must be a number');
-  str = svg2png.sync(new Buffer(str, 'utf8'), { width, height });
   // eslint-disable-next-line max-len
-  return `<img src="data:image/png;base64,${str.toString('base64')}" />`;
+  str = svg2png.sync(new Buffer(str, 'utf8'), { width: parseInt(width * size, 10), height: parseInt(height * size, 10) });
+  // eslint-disable-next-line max-len
+  return `<img width="${width}" height="${height}" src="data:image/png;base64,${str.toString('base64')}" />`;
+}
+
+export function png2x(name, color, width, height) {
+  return png(name, color, width, height, 2);
+}
+
+export function png3x(name, color, width, height) {
+  return png(name, color, width, height, 3);
 }
 
 export default {
@@ -114,5 +124,7 @@ export default {
   iconsByUnicodeHex,
   img,
   svg,
-  png
+  png,
+  png2x,
+  png3x
 };
