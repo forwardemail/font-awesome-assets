@@ -1,0 +1,60 @@
+{
+  "name": "font-awesome-assets",
+  "description": "Convert any of @FortAwesome's Font-Awesome icons to an asset, such as an <svg> tag or a Base64-encoded PNG/SVG <img> tag!  This package was built for @CrocodileJS.",
+  "version": "0.0.1",
+  "author": "Nick Baugh <niftylettuce@gmail.com>",
+  "bugs": "https://github.com/crocodilejs/font-awesome-assets/issues",
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "lodash": "^4.16.4",
+    "svg2png": "^4.0.0",
+    "svgfont2js": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-crocodile": "^1.0.0",
+    "eslint-config-crocodile": "^1.0.0",
+    "rainbowvis.js": "^1.0.1"
+  },
+  "engines": {
+    "node": ">= 6.x"
+  },
+  "homepage": "https://github.com/crocodilejs/font-awesome-assets",
+  "keywords": [
+    "awesome",
+    "base64",
+    "bootstrap",
+    "btoa",
+    "convert",
+    "converter",
+    "data",
+    "data-attr",
+    "data-uri",
+    "email",
+    "encoded",
+    "export",
+    "fa",
+    "font",
+    "fontawesome",
+    "html",
+    "icon",
+    "image",
+    "img",
+    "png",
+    "render",
+    "svg",
+    "tag",
+    "to",
+    "uri"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": "crocodilejs/font-awesome-assets",
+  "scripts": {
+    "compile": "rm -rf lib/ && babel -d lib src",
+    "lint": "eslint .",
+    "prepublish": "npm run test",
+    "test": "npm run lint && npm run compile",
+    "watch": "babel -w -d lib src"
+  }
+}
