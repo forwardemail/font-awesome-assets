@@ -16,7 +16,7 @@ _.each(_.keys(aliases), (alias, i) => {
 
 const imgs = _.map(_.keys(aliases), alias => {
   // eslint-disable-next-line max-len
-  return `<img src="media/rainbow/${alias}.svg" width="16" height="16" title="${alias}" alt="${alias}" />`;
+  return `<img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/rainbow/${alias}.svg" width="16" height="16" title="${alias}" alt="${alias}" />`;
 });
 
 fs.writeFileSync(path.join(__dirname, '..', 'media', 'rainbow.html'), imgs.join(' '), 'utf8');

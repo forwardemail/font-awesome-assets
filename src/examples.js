@@ -26,11 +26,11 @@ fs.writeFileSync(
 
 const imgs = [
   // eslint-disable-next-line max-len
-  '<img src="media/hacker-news.svg" width="100" height="100" title="hacker-news" alt="hacker-news" />',
+  '<img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/hacker-news.svg" width="100" height="100" title="hacker-news" alt="hacker-news" />',
   // eslint-disable-next-line max-len
-  '<img src="media/briefcase-black.svg" width="100" height="100" title="briefcase-black" alt="briefcase-black" />',
+  '<img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/briefcase-black.svg" width="100" height="100" title="briefcase-black" alt="briefcase-black" />',
   // eslint-disable-next-line max-len
-  '<img src="media/briefcase-opacity.svg" width="100" height="100" title="briefcase-opacity" alt="briefcase-opacity" />'
+  '<img src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/briefcase-opacity.svg" width="100" height="100" title="briefcase-opacity" alt="briefcase-opacity" />'
 ];
 
 fs.writeFileSync(path.join(__dirname, '..', 'media', 'examples.html'), imgs.join('\n\n'), 'utf8');
