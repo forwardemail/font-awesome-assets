@@ -71,7 +71,7 @@ console.log(briefcase);
 // '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1792 1792"><path fill="rgba(0,0,0,0.5)" d="M640 256h512v-128h-512v128zM1792 896v480q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-480h672v160q0 26 19 45t45 19h320q26 0 45-19t19-45v-160h672zM1024 896v128h-256v-128h256zM1792 416v384h-1792v-384q0-66 47-113t113-47h352v-160q0-40 28-68t68-28h576q40 0 68 28t28 68v160h352q66 0 113 47t47 113z" /></svg>'
 ```
 
-<img width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYklEQVRoge2ZsUoDQRCGv4uigsRgEQOBwya1WlsIdnmYPIOFvW1eRPuAjyDkBS6VsQlaxeYssgfnarzc3OpkZT5YuOV2Z/6fnTtub0HONTAF8oZt6mL9KcfAoqHwclu4mLVpCQ1cAB3h3O/oAOeSibvChPte/xZ4qRmjC9yU+gdCLSKGfC6BgSDGwIsxlAiRltDW4JfQHpACScW8vtc/FeT25/SpXskcmAHv/o0UeACWhHuz/FZbOq1pIb4HzLdAWN02B3o7wBi49JckAg6BbgJklJYjMrKE1XJES/SvUTOgjRnQxgxoYwa0SYCRtggjdkJ9nxeMfhhTLtcgeaN/iKM3EHI/UPwIOAOu1ox5BJ7cdZC8IQ0cAW8bjm0DryGShiyhO1bCqmi7sUGwLaU2ZkAbM6DNvzAw0xbRgKwFTLRVNGAC8f5efwZOCiexHXDcO81fjpI2PWLSImfNEZNhGIYOH2xyJC1ddamJAAAAAElFTkSuQmCC" />
+<img width="16" height="16" src="https://cdn.rawgit.com/crocodilejs/font-awesome-assets/master/media/briefcase@3x.png" width="100" height="100" title="briefcase@3x" alt="briefcase@3x" />
 
 Output the [fa-briefcase][fa-briefcase] with a black hex color `#000` and 3x retina support as a PNG with a Base64-encoded `data-uri`.
 
