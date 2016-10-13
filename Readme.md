@@ -171,9 +171,11 @@ An object containing pairs of aliases to their respective icon data as parsed by
 
 ## License
 
-[MIT][license-url]
+* All icons, fonts, and SVG files are licensed under [SIL OFL 1.1][sil-ofl]
+* All code is licensed under [MIT][license-url]
 
 
+[sil-ofl]: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: LICENSE
 [npm-image]: https://img.shields.io/npm/v/font-awesome-assets.svg
