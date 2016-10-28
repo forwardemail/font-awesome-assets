@@ -122,6 +122,8 @@ import {
   svg,
   img,
   png,
+  png2x,
+  png3x,
   aliases,
   icons,
   iconsByUnicodeHex
