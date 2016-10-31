@@ -15,6 +15,7 @@
     "babel-cli": "^6.11.4",
     "babel-preset-crocodile": "^1.0.0",
     "eslint-config-crocodile": "^1.0.0",
+    "jest": "^16.0.2",
     "rainbowvis.js": "^1.0.1"
   },
   "engines": {
@@ -55,7 +56,8 @@
     "compile": "rm -rf lib/ && babel -d lib src",
     "lint": "eslint .",
     "prepublish": "npm run test",
-    "test": "npm run lint && npm run compile",
+    "jest": "jest",
+    "test": "npm run lint && npm run jest && npm run compile",
     "watch": "babel -w -d lib src"
   }
 }
