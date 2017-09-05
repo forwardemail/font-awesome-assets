@@ -1,4 +1,5 @@
 {
   "presets": [ "crocodile" ],
-  "sourceMaps": "inline"
+  "sourceMaps": "inline",
+  "plugins": [ "add-module-exports" ]
 }
