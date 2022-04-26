@@ -1,16 +1,15 @@
 {
   "name": "font-awesome-assets",
-  "description":
-    "Convert any of @FortAwesome's Font-Awesome icons to an asset, such as an <svg> tag or a Base64-encoded PNG/SVG <img> tag! It supports Retina devices and custom tag attributes too! This package was built for @CrocodileJS.",
-  "version": "0.0.8",
+  "description": "Convert any of @FortAwesome's Font-Awesome icons to an asset, such as an <svg> tag or a Base64-encoded PNG/SVG <img> tag! It supports Retina devices and custom tag attributes too! This package was built for @CrocodileJS.",
+  "version": "0.0.9",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/crocodilejs/font-awesome-assets/issues",
   "dependencies": {
+    "@ladjs/svgfont2js": "^1.0.1",
     "cheerio": "^0.22.0",
     "font-awesome": "^4.6.3",
     "lodash": "^4.16.4",
-    "svg2png": "^4.0.0",
-    "@ladjs/svgfont2js": "^1.0.1"
+    "svg2png": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
