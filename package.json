@@ -10,7 +10,7 @@
     "font-awesome": "^4.6.3",
     "lodash": "^4.16.4",
     "svg2png": "^4.0.0",
-    "svgfont2js": "github:niftylettuce/svgfont2js"
+    "@ladjs/svgfont2js": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

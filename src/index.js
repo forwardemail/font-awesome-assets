@@ -2,7 +2,7 @@
 import $ from 'cheerio';
 import svg2png from 'svg2png';
 import _ from 'lodash';
-import svgfont2js from 'svgfont2js';
+import svgfont2js from '@ladjs/svgfont2js';
 import fs from 'fs';
 
 function applyAttributes($el, attrs) {
