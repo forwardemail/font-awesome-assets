@@ -6,7 +6,7 @@
   "bugs": "https://github.com/crocodilejs/font-awesome-assets/issues",
   "dependencies": {
     "@ladjs/svgfont2js": "^1.0.1",
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0",
     "font-awesome": "^4.6.3",
     "lodash": "^4.16.4",
     "svg2png": "^4.0.0"
